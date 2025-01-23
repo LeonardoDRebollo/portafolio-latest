@@ -32,8 +32,8 @@
 
 .userprofile {
   display: flex;
-  justify-content: center;
   width: 100%;
+  padding-left: 15%;
   text-align: center;
   color: #ffffff;
   z-index: 1;
@@ -47,12 +47,50 @@
   position: sticky;
   top: 10%;
   left: 0;
+  margin-top: 10%;
 }
 
 .profile_section img{
-  
-  width: 300px;
-  
+  animation: glowing 5s infinite linear alternate;
+  width: 200px;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0px 0px 5px 0px rgb(255, 255, 255, 0.4);
+  }
+  100%{
+    box-shadow: 0px 0px 30px 0px rgb(255, 255, 255);
+  }
+}
+
+.contact{
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  align-items: center;
+}
+
+.skills{
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  color: #cecece;
+}
+
+.SocialIcon{
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+}
+
+
+.description{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  text-align: justify;
 }
 
 .timeline_item:hover{
@@ -64,6 +102,41 @@
     color: #e0e0e0;
   }
 }
+
+.timeline_content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timeline_content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* styles.module.css */
+.timeline_item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timeline_item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline_item:hover
+{
+  color: #ffffff;
+  .li{
+    color: #00e1ff;
+  }
+  .span {
+    color: #e0e0e0;
+  }
+}
+
 
 .timeline_content {
   display: flex;
@@ -143,10 +216,18 @@
   transition: 2s;
 }
 
+.ufo{
+  position: absolute;
+  transform: translate(-300%, 0%) rotate(20deg);
+  width: 15%;
+  z-index: 1;
+  fill: #000E36;
+}
+
 .planet{
   position: absolute;
-  transform: translate(80%, 10%);
-  width: 20%;
+  transform: translate(60%, 10%);
+  width: 30%;
   z-index: 1;
   fill: #ffffff;
 }

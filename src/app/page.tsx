@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import TimeLine from "./components/time-line.component";
 import ProfileLine from "./components/profie-line.component";
 import rocket from "../../public/images/rocket.png";
-import { Planet } from "../../public/svg-logos/svg-icons";
+import { Planet, UfoBeam } from "../../public/svg-logos/svg-icons";
 
 interface Star {
   top: number;
@@ -62,6 +62,7 @@ export default function Home() {
       <div className={styles.container}>
         <section className={styles.welcome} >
           <div className={styles.welcome_title}>
+          <UfoBeam className={styles.ufo}/>
           <h2>Bienvenido a mi portafolio en donde podras encontrar informacion sobre mi, informacion sobre los poyectos en los que he realizado, estoy realizando y en los que he trabajado
           ademas mi formacion academica.</h2>
           <Planet className={styles.planet}/>
@@ -73,7 +74,7 @@ export default function Home() {
 </div>
         
           <Button type="button" className={styles.button} />
-          <img src={rocket.src} alt="Rocket" className={styles.rocket} onClick={rocketAnimation} />
+          {/* <img src={rocket.src} alt="Rocket" className={styles.rocket} onClick={rocketAnimation} /> */}
         </section>
         
         <section className={styles.userprofile}>
