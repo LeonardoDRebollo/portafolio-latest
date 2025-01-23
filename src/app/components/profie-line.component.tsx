@@ -3,7 +3,6 @@ import profilePicture from "../../../public/images/profile/Foto.jpg";
 import styles from "../page.module.css";
 import { Facebook, Linkedin, Mail } from "../../../public/svg-logos/svg-icons";
 import { GitHub } from "@mui/icons-material";
-import Image from "next/image";
 
 const skillsLits = [
     {

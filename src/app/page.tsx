@@ -5,7 +5,6 @@ import Button from "./components/button.component";
 import styles from "./page.module.css";
 import TimeLine from "./components/time-line.component";
 import ProfileLine from "./components/profie-line.component";
-import rocket from "../../public/images/rocket.png";
 import { Planet, UfoBeam } from "../../public/svg-logos/svg-icons";
 
 interface Star {
@@ -18,8 +17,8 @@ export default function Home() {
 
   useEffect(() => {
     const createStars = (count: number) => {
-      const pageHeight = document.documentElement.scrollHeight; // Altura total de la página
-      const pageWidth = document.documentElement.scrollWidth; // Ancho total de la página
+      const pageHeight = document.documentElement.scrollHeight; 
+      const pageWidth = document.documentElement.scrollWidth; 
       const generatedStars: Star[] = [];
 
       for (let i = 0; i < count; i++) {
@@ -34,13 +33,6 @@ export default function Home() {
 
     createStars(300);
   }, []);
-
-  const rocketAnimation = () => {
-    const rocketElement = document.querySelector(`.${styles.rocket}`);
-    if (rocketElement) {
-      rocketElement.classList.add(styles.animateRocket);
-    }
-  };
 
   return (
     <div id="stars" className={styles.main}>
@@ -74,7 +66,6 @@ export default function Home() {
 </div>
         
           <Button type="button" className={styles.button} />
-          {/* <img src={rocket.src} alt="Rocket" className={styles.rocket} onClick={rocketAnimation} /> */}
         </section>
         
         <section className={styles.userprofile}>
