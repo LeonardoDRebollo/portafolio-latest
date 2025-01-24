@@ -10,11 +10,12 @@ import { Astronaut } from "../../../../public/svg-logos/svg-icons";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import { IconButton } from "@mui/material";
 import petmania from "../../../../public/images/Petmania/petmania-1.png";
+import Image from "next/image";
 
 export default function ProjectPage({
   params,
 }: {
-  params: { id: string };
+  params: { id: number };
 }) {
   const { id } = params;
   const router = useRouter();
@@ -31,7 +32,7 @@ export default function ProjectPage({
   }, []);
 
   if (!id) {
-    notFound();
+    return notFound();
   }
 
   return (
@@ -73,7 +74,7 @@ export default function ProjectPage({
             </p>
           </div>
           <div className={styles.images_project}>
-            <img src={petmania.src} alt={"xd"} height={300} />
+          <Image src={petmania.src} alt="Project Image" height={300} width={300} />;
           </div>
         </section>
         
