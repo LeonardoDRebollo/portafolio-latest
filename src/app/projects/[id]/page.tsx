@@ -12,12 +12,7 @@ import { IconButton } from "@mui/material";
 import petmania from "../../../../public/images/Petmania/petmania-1.png";
 import Image from "next/image";
 
-export default function ProjectPage({
-  params,
-}: {
-  params: { id: number };
-}) {
-  const { id } = params;
+export default function ProjectPage({params,}: {params: { id: any };}) {
   const router = useRouter();
   const [stars, setStars] = useState<Star[]>([]);
 
@@ -31,9 +26,6 @@ export default function ProjectPage({
     );
   }, []);
 
-  if (!id) {
-    return notFound();
-  }
 
   return (
     <div id="stars" className={styles.main}>
