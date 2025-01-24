@@ -11,7 +11,11 @@ import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRound
 import { IconButton } from "@mui/material";
 import petmania from "../../../../public/images/Petmania/petmania-1.png";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+export default function ProjectPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const { id } = params;
   const router = useRouter();
   const [stars, setStars] = useState<Star[]>([]);
