@@ -5,6 +5,7 @@ import WebRoundedIcon from '@mui/icons-material/WebRounded';
 import PhoneAndroidRoundedIcon from '@mui/icons-material/PhoneAndroidRounded';
 import DesktopWindowsRoundedIcon from '@mui/icons-material/DesktopWindowsRounded';
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 const TimeLineItems = [
    {
@@ -118,11 +119,13 @@ export default function TimeLine() {
             padding: 0,
           },
         }}
+
       >
         {TimeLineItems.map((item, index) => (
-          <TimelineItem
+          <Link href={`/projects/${index.toString()}`} style={{ textDecoration: "none", color: "white" }}>
+                 <TimelineItem
             key={index}
-            className={styles.timeline_item} // Clase para animar el TimelineItem completo
+            className={styles.timeline_item} 
           >
             <TimelineOppositeContent>
               <p className={styles.timeline_date}>{item.date}</p>
@@ -160,6 +163,8 @@ export default function TimeLine() {
               </div>
             </TimelineContent>
           </TimelineItem>
+          </Link>
+   
         ))}
       </Timeline>
     </div>
