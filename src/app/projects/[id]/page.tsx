@@ -12,7 +12,13 @@ import { IconButton } from "@mui/material";
 import petmania from "../../../../public/images/Petmania/petmania-1.png";
 import Image from "next/image";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function ProjectPage({ params }: PageProps) {
   const router = useRouter();
   const { id } = params;
   
