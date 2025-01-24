@@ -76,12 +76,12 @@ export default function ProjectPage({ params }: Props) {
             </p>
           </div>
           <div className={styles.images_project}>
-            <img src={petmania.src} alt={"xd"} height={500} />
+            <img src={petmania.src} alt={"xd"} height={300} />
           </div>
         </section>
-        <Astronaut className={styles.astronaut} />
+        
       </div>
-
+      <Astronaut className={styles.astronaut} />
       <BlackWave />
     </div>
   );
