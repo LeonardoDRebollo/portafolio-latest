@@ -8,6 +8,7 @@
   border-radius: 2px;
   background-color: white;
   animation: stars-animation 2s infinite linear;
+  z-index: 0;
 }
 
 @keyframes stars-animation {
