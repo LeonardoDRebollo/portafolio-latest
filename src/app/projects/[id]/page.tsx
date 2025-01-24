@@ -1,6 +1,6 @@
 "use client";
 
-import { notFound, useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import styles from "../projects.module.css";
 import { BlackWave } from "@/app/components/blackwave.component";
 import { Star } from "@/app/page";
@@ -12,7 +12,7 @@ import { IconButton } from "@mui/material";
 import petmania from "../../../../public/images/Petmania/petmania-1.png";
 import Image from "next/image";
 
-export default function ProjectPage({ params }: any) {
+export default function ProjectPage({ params }: { params: { id: string } }) {
   const router = useRouter();
   const { id } = params;
   
