@@ -122,9 +122,9 @@ export default function TimeLine() {
 
       >
         {TimeLineItems.map((item, index) => (
-          <Link href={`/projects/${index.toString()}`} style={{ textDecoration: "none", color: "white" }}>
+          <Link href={`/projects/${index.toString()}`} style={{ textDecoration: "none", color: "white" }}  key={index}>
                  <TimelineItem
-            key={index}
+          
             className={styles.timeline_item} 
           >
             <TimelineOppositeContent>

@@ -2,7 +2,6 @@
 
 import { notFound, useRouter } from "next/navigation";
 import styles from "../projects.module.css";
-import Image from "next/image";
 import { BlackWave } from "@/app/components/blackwave.component";
 import { Star } from "@/app/page";
 import { useEffect, useState } from "react";
@@ -58,7 +57,7 @@ export default function ProjectPage({ params }: Props) {
         <section>
           <IconButton>
             <span onClick={() => router.back()} className={styles.backButton}>
-              <ArrowBackIosNewRoundedIcon sx={{ color: "black" }} />{" "}
+              <ArrowBackIosNewRoundedIcon sx={{ color: "black" }} />
               <p className={styles.backButtonText}>Volver</p>
             </span>
           </IconButton>
