@@ -11,11 +11,17 @@ import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRound
 import { IconButton } from "@mui/material";
 import petmania from "../../../../public/images/Petmania/petmania-1.png";
 import Image from "next/image";
+import { ProjectDescription } from "@/app/components/project-components/project-description.component";
+import { ProjectsInterface } from "../projects-list";
 
-
+export interface ProjectResponse{
+  data:ProjectsInterface
+}
 export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
   const router = useRouter();
   const { id } = use(params);
+  const [data, setData] = useState<ProjectResponse>();
+  const [loading, setLoading] = useState(true);
   
   const [stars, setStars] = useState<Star[]>([]);
 
@@ -27,6 +33,28 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
         document.documentElement.scrollWidth
       )
     );
+  }, []);
+
+  const getProject = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/api/projects-api?id=${id}`, {
+        method: "GET",
+      });
+     
+      const data = await response.json();
+      console.log(data);
+      setData(data);
+    }catch (error) {
+      alert(error);
+    }finally {
+      setLoading(false);
+    }
+    
+   
+  };
+
+  useEffect(() => {
+    getProject();
   }, []);
 
 
@@ -57,17 +85,12 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
           </IconButton>
         </section>
         <section className={styles.project_section}>
-          <div className={styles.description_project}>
-            <h2>Proyecto {id}</h2>
-            <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including 
-            versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-          </div>
+          {loading ? <p>Cargando...</p> : 
+          data ? 
+          (<ProjectDescription id={id} data={data.data} />) : 
+          <p>Proyecto no encontrado</p>
+          }
+          
           <div className={styles.images_project}>
           <Image src={petmania.src} alt="Project Image" height={300} width={300} />;
           </div>

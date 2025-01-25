@@ -256,6 +256,16 @@ z-index: 1;
   width: 8%;
   fill: #000E36;
   z-index: 1;
+  animation: move-cow 10s infinite linear alternate;
+}
+
+@keyframes move-cow {
+  0% {
+    transform: translate(-570%, 220%) rotate(20deg);
+  }
+  100% {
+    transform: translate(-570%, 260%) rotate(20deg);
+  }
 }
 
 
@@ -460,8 +470,19 @@ z-index: 1;
     width: 8%;
     fill: #000E36;
     z-index: 1;
+    animation: move-cow 5s infinite linear alternate;
   }
 
+  @keyframes move-cow {
+    0% {
+      transform: translate(-570%, 170%) rotate(20deg);
+    }
+    100% {
+      transform: translate(-570%, 10%) rotate(20deg);
+    }
+  }
+  
+ 
   
   
   .triangle_shape {

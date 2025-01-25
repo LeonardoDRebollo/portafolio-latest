@@ -89,7 +89,7 @@ export default function TimeLine() {
   }, []);
 
   useEffect(() => {
-    const handleIntersection: IntersectionObserverCallback = (entries) => {
+    const Intersection: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add(styles.visible);
@@ -97,8 +97,8 @@ export default function TimeLine() {
       });
     };
 
-    observer.current = new IntersectionObserver(handleIntersection, {
-      threshold: 0.1, // Se activa cuando el 10% del elemento es visible
+    observer.current = new IntersectionObserver(Intersection, {
+      threshold: 0.1,
     });
 
     const items = document.querySelectorAll(`.${styles.timeline_item}`);
