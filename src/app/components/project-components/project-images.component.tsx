@@ -24,7 +24,7 @@ export default function ProjectImages({ data }: ProjectImagesProps) {
       cols={4}
       rowHeight={121}
     >
-      {data.map((item: any) => (
+      {data.map((item : any) => (
         <ImageListItem
           key={item.img}
           cols={item.cols || 1}

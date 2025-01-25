@@ -3,7 +3,6 @@
 import { ProjectsInterface } from "@/app/projects/projects-list";
 import styles from "../../projects/projects.module.css";
 import { TecnologiesList } from "@/app/projects/tecnologies-list";
-import { Icon } from "@mui/material";
 
 interface ProjectDescriptionProps {
   id: string;
