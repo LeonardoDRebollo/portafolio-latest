@@ -1,43 +1,65 @@
-import { ImageList, ImageListItem } from "@mui/material";
-import Image from "next/image";
+import { useState } from "react";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+import ProjectModalImages from "./project-modal-images.component";
 
-interface ImageData {
-    img: string;
+export interface ProjectImagesProps {
+  data: string[];
 }
-interface ProjectImagesProps {
-  data: ImageData[];
-}
+
 export default function ProjectImages({ data }: ProjectImagesProps) {
-  function srcset(image: string, size: number, rows = 1, cols = 1) {
-    return {
-      src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-      srcSet: `${image}?w=${size * cols}&h=${
-        size * rows
-      }&fit=crop&auto=format&dpr=2 2x`,
-    };
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [image, setImage] = useState("");
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? data.length - 1 : prevIndex - 1
+    );
+  };
+
+  const ImageClick = ({ data }: { data: string}) => {
+    setOpen(true);
+    setImage(data);
   }
 
   return (
-    <ImageList
-      sx={{ width: 500, height: 450 }}
-      variant="quilted"
-      cols={4}
-      rowHeight={121}
-    >
-      {data.map((item: ImageData & { rows?: number; cols?: number }) => (
-  <ImageListItem
-    key={item.img}
-    cols={item.cols || 1}
-    rows={item.rows || 1}
-  >
-    <Image
-      {...srcset(item.img, 121, item.rows, item.cols)}
-      alt={item.img}
-      loading="lazy"
-    />
-  </ImageListItem>
-))}
-
-    </ImageList>
+    <div className="carousel-container">
+      <div className="carousel">
+        <button className="carousel-btn prev" onClick={prevSlide}>
+         <ArrowBackIosNewRoundedIcon/>
+        </button>
+        <ul className="carousel-slides">
+          {data.map((img, index) => (
+            <li
+              key={index}
+              className={`carousel-slide ${
+                index === currentIndex ? "active" : ""
+              }`}
+            >
+              <img src={img} alt={`Slide ${index}`} draggable="false" onClick={() => ImageClick({data: img})} />
+            </li>
+          ))}
+        </ul>
+        <button className="carousel-btn next" onClick={nextSlide}>
+        <ArrowBackIosNewRoundedIcon sx={{transform: "rotate(180deg)"}}/>
+        </button>
+      </div>
+      <div className="carousel-indicators">
+        {data.map((_, index) => (
+          <button
+            key={index}
+            className={`indicator ${
+              index === currentIndex ? "active" : ""
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          ></button>
+        ))}
+      </div>
+      <ProjectModalImages image={image} open={open} onClose={() => setOpen(false)}/>
+    </div>
   );
 }

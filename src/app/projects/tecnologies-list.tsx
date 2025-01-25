@@ -1,5 +1,5 @@
 import React from "react";
-import { AccessIcon, CSharpIcon, CSSIcon, HtmlIcon, JavaIcon, JavaScriptIcon, MysqlIcon, NodeIcon, ReactIcon, TypescriptIcon, ViteIcon, WordPressIcon } from "../../../public/svg-logos/svg-icons";
+import { AccessIcon, CSharpIcon, CSSIcon, FlutterIcon, HtmlIcon, JavaIcon, JavaScriptIcon, MysqlIcon, NodeIcon, ReactIcon, TypescriptIcon, ViteIcon, WordPressIcon } from "../../../public/svg-logos/svg-icons";
 
 export interface TecnologiesInterface {
     id: number,
@@ -40,22 +40,22 @@ export const TecnologiesList: TecnologiesInterface[] = [
     },
     {
         id: 7,
-        name: "MysqlIcon",
+        name: "Mysql",
         icon: <MysqlIcon height={50} width={50}/>,
     },
     {
         id: 8,
-        name: "NodeIcon",
+        name: "Node",
         icon: <NodeIcon height={50} width={50}/>,
     },
     {
         id: 9,
-        name: "ReactIcon",
+        name: "React",
         icon: <ReactIcon height={50} width={50}/>,
     },
     {
         id: 10,
-        name: "TypescriptIcon",
+        name: "Typescript",
         icon: <TypescriptIcon height={50} width={50}/>,
     },
     {
@@ -65,8 +65,13 @@ export const TecnologiesList: TecnologiesInterface[] = [
     },
     {
         id: 12,
-        name: "WordPressIcon",
+        name: "WordPress",
         icon: <WordPressIcon height={50} width={50}/>,
+    },
+    {
+        id: 13,
+        name: "Flutter",
+        icon: <FlutterIcon height={50} width={50}/>,
     }
 
 ];

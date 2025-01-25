@@ -9,10 +9,10 @@ import { createStars } from "@/app/functions/create-stars.function";
 import { Astronaut } from "../../../../public/svg-logos/svg-icons";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import { IconButton } from "@mui/material";
-import petmania from "../../../../public/images/Petmania/petmania-1.png";
-import Image from "next/image";
 import { ProjectDescription } from "@/app/components/project-components/project-description.component";
-import { ProjectsInterface } from "../projects-list";
+import { Projects, ProjectsInterface } from "../projects-list";
+import ProjectImages from "@/app/components/project-components/project-images.component";
+import { Spinner } from "@/app/components/project-components/spinner.component";
 
 export interface ProjectResponse{
   data:ProjectsInterface
@@ -37,7 +37,7 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
 
   const getProject = async () => {
     try {
-      const response = await fetch(`https://portafolio-latest.vercel.app/api/projects-api?id=${id}`, {
+      const response = await fetch(`http://localhost:3000/api/projects-api?id=${id}`, {
         method: "GET",
       });
      
@@ -78,23 +78,37 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
       <div className={styles.container}>
         <section>
           <IconButton>
-            <span onClick={() => router.back()} className={styles.backButton}>
+            <span onClick={() => router.push("/")} className={styles.backButton}>
               <ArrowBackIosNewRoundedIcon sx={{ color: "black" }} />
               <p className={styles.backButtonText}>Volver</p>
             </span>
           </IconButton>
         </section>
         <section className={styles.project_section}>
-          {loading ? <p>Cargando...</p> : 
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {loading ? <Spinner /> : 
           data ? 
-          (<ProjectDescription id={id} data={data.data} />) : 
+          (<ProjectDescription data={data.data} />) : 
           <p>Proyecto no encontrado</p>
           }
           
           <div className={styles.images_project}>
-          <Image src={petmania.src} alt="Project Image" height={300} width={300} />;
+          <ProjectImages data={data?.data.images || []} />
           </div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+          {id === "1" ? null : (
+            <button className={styles.button_next} onClick={() => router.push("/projects/" + (parseInt(id) - 1))}>Anterior proyecto</button>
+          )}
+          {id === (Projects.length).toString() ? null : (
+           <button className={styles.button_next} onClick={() => router.push("/projects/" + (parseInt(id) + 1))}>Siguiente proyecto</button>
+          )}
+        </div>
+      
+          
         </section>
+     
+       
         
       </div>
       <Astronaut className={styles.astronaut} />
