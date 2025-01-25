@@ -43,7 +43,7 @@ export function ProjectDescription({ data }: ProjectDescriptionProps) {
        
         <div className={styles.tecnologies}>
         {data.projectTecnologies && mappedTechnologies && mappedTechnologies.map((tech) => (
-          <Tooltip title={tech.name}>
+          <Tooltip title={tech.name} key={tech.id}>
           <div key={tech.id} >
             {tech.icon}
            
