@@ -19,6 +19,7 @@ export default function Home() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    
     setStars(createStars(300, document.documentElement.scrollHeight, document.documentElement.scrollWidth));
   }, []);
 

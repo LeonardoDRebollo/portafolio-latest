@@ -8,6 +8,7 @@ import { Projects } from "../projects/projects-list";
 
 export default function TimeLine() {
   const observer = useRef<IntersectionObserver | null>(null);
+  const screenWidth = window.innerWidth;
 
   useEffect(() => {
     const Intersection: IntersectionObserverCallback = (entries) => {
@@ -54,7 +55,7 @@ export default function TimeLine() {
 
     return (
       <div>
-        
+
 
 <div className={styles.timeline_container}>
       <Timeline
@@ -72,9 +73,14 @@ export default function TimeLine() {
           
             className={styles.timeline_item} 
           >
-            <TimelineOppositeContent>
+            {
+              screenWidth > 700 &&
+              <TimelineOppositeContent>
               <p className={styles.timeline_date}>{item.date}</p>
             </TimelineOppositeContent>
+
+            }
+            
             <TimelineSeparator>
               <TimelineDot variant="outlined">
                 <div
@@ -89,10 +95,15 @@ export default function TimeLine() {
               </TimelineDot>
               {index !== Projects.length - 1 && <TimelineConnector />}
             </TimelineSeparator>
-            <TimelineContent>
+            <TimelineContent sx={{ m: 0 }}>
               <div className={styles.timeline_content}>
                 <section>
-                  <h3>{item.name}</h3>
+                <h3>{item.name}</h3>
+                  {
+                    screenWidth < 700 &&
+                    <p className={styles.timeline_date}>{item.date}</p>
+                  }
+                
                   <p
                     style={{
                       maxWidth: "500px",
@@ -102,9 +113,12 @@ export default function TimeLine() {
                     {item.description}
                   </p>
                 </section>
-                <section>
-                  <ArrowForwardIosRoundedIcon className={styles.icon} />
-                </section>
+                {
+                  screenWidth > 700 && 
+                  <section>
+                    <ArrowForwardIosRoundedIcon className={styles.icon} />
+                  </section>
+                }
               </div>
             </TimelineContent>
           </TimelineItem>
