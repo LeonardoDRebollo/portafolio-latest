@@ -521,6 +521,8 @@ z-index: 1;
     padding: 5% 2%;
     top: 0;
     min-height: 55vh;
+    overflow: hidden;
+    max-width: 100vw;
     font-size: .9rem;
   }
 
@@ -672,7 +674,7 @@ z-index: 1;
   
   .planet{
     position: absolute;
-    transform: translate(-10%, -20%);
+    transform: translate(10%, -20%);
     width: 65%;
     z-index: 1;
     fill: #ffffff;
@@ -711,7 +713,7 @@ z-index: 1;
     bottom: 0;
     left: 0;
     width: 100%;
-    transform: translate(0%, -170%);
+    transform: translate(0%, -38vh);
     overflow: hidden;
     line-height: 0;
   }
