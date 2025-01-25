@@ -24,19 +24,20 @@ export default function ProjectImages({ data }: ProjectImagesProps) {
       cols={4}
       rowHeight={121}
     >
-      {data.map((item : any) => (
-        <ImageListItem
-          key={item.img}
-          cols={item.cols || 1}
-          rows={item.rows || 1}
-        >
-          <Image
-            {...srcset(item.img, 121, item.rows, item.cols)}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
+      {data.map((item: ImageData & { rows?: number; cols?: number }) => (
+  <ImageListItem
+    key={item.img}
+    cols={item.cols || 1}
+    rows={item.rows || 1}
+  >
+    <Image
+      {...srcset(item.img, 121, item.rows, item.cols)}
+      alt={item.img}
+      loading="lazy"
+    />
+  </ImageListItem>
+))}
+
     </ImageList>
   );
 }
