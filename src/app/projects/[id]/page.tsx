@@ -4,7 +4,7 @@ import {  useRouter } from "next/navigation";
 import styles from "../projects.module.css";
 import { BlackWave } from "@/app/components/blackwave.component";
 import { Star } from "@/app/page";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { createStars } from "@/app/functions/create-stars.function";
 import { Astronaut } from "../../../../public/svg-logos/svg-icons";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
@@ -12,15 +12,10 @@ import { IconButton } from "@mui/material";
 import petmania from "../../../../public/images/Petmania/petmania-1.png";
 import Image from "next/image";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
 
-export default function ProjectPage({ params }: PageProps) {
+export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
   const router = useRouter();
-  const { id } = params;
+  const { id } = use(params);
   
   const [stars, setStars] = useState<Star[]>([]);
 
