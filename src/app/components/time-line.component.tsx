@@ -2,13 +2,13 @@ import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem
 import styles from "../page.module.css";
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Projects } from "../projects/projects-list";
 
 export default function TimeLine() {
   const observer = useRef<IntersectionObserver | null>(null);
-  const screenWidth = window.innerWidth;
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
     const Intersection: IntersectionObserverCallback = (entries) => {
@@ -29,6 +29,12 @@ export default function TimeLine() {
     return () => {
       observer.current?.disconnect();
     };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setScreenWidth(window.innerWidth);
+    }
   }, []);
 
   useEffect(() => {
