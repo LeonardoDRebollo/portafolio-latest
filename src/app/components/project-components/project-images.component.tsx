@@ -9,7 +9,7 @@ export interface ProjectImagesProps {
 export default function ProjectImages({ data }: ProjectImagesProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [open, setOpen] = useState(false);
-  const [_image, setImage] = useState("");
+  const [, setImage] = useState("");
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
