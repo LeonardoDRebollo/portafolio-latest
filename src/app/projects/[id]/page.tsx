@@ -85,7 +85,7 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
           </IconButton>
         </section>
         <section className={styles.project_section}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div className={styles.project}>
           {loading ? <Spinner /> : 
           data ? 
           (<ProjectDescription data={data.data} />) : 
