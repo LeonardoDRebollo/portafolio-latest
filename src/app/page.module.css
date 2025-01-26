@@ -691,7 +691,7 @@ z-index: 1;
   .cow{
     position: absolute;
     width: 18%;
-    fill: #000E36;
+    fill: #ffffff;
     z-index: 1;
     animation: move-cow 5s infinite linear alternate;
   }
@@ -713,7 +713,7 @@ z-index: 1;
     bottom: 0;
     left: 0;
     width: 100%;
-    transform: translate(0%, -38vh);
+    transform: translate(0%, -35vh);
     overflow: hidden;
     line-height: 0;
   }
@@ -722,7 +722,7 @@ z-index: 1;
     position: relative;
     display: block;
     width: calc(282% + 1.3px);
-    height: 157px;
+    height: 250px;
   }
   
   .triangle_shape .triangle_fill {

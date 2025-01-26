@@ -106,7 +106,7 @@ export const Projects: ProjectsInterface[] = [
      date: "2019 - 2019",
      repository: "Privado",
      description: "Aplicación windows para la gestion de mascotas, proyecto escolar en Java.",
-    imagesSrc: "images/petmania",
+    imagesSrc: "images/Petmania",
     technologies: [3,6],
   }
 
