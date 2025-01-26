@@ -9,7 +9,7 @@ export interface ProjectImagesProps {
 export default function ProjectImages({ data }: ProjectImagesProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [open, setOpen] = useState(false);
-  const [image, setImage] = useState("");
+  const [_image, setImage] = useState("");
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
@@ -59,7 +59,7 @@ export default function ProjectImages({ data }: ProjectImagesProps) {
           ></button>
         ))}
       </div>
-      <ProjectModalImages image={image} open={open} onClose={() => setOpen(false)}/>
+      <ProjectModalImages imageArray={data} open={open} onClose={() => setOpen(false)}/>
     </div>
   );
 }

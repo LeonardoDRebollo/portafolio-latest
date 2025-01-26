@@ -37,7 +37,7 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
 
   const getProject = async () => {
     try {
-      const response = await fetch(`https://portafolio-latest.vercel.app/api/projects-api?id=${id}`, {
+      const response = await fetch(`http://localhost:3000/api/projects-api?id=${id}`, {
         method: "GET",
       });
      
@@ -103,14 +103,9 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
           {id === (Projects.length).toString() ? null : (
            <button className={styles.button_next} onClick={() => router.push("/projects/" + (parseInt(id) + 1))}>Siguiente proyecto</button>
           )}
-        </div>
-      
-          
+        </div>  
         </section>
-     
-       
-        
-      </div>
+           </div>
       <Astronaut className={styles.astronaut} />
       <BlackWave />
     </div>

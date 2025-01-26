@@ -25,7 +25,7 @@ export const Projects: ProjectsInterface[] = [
     repository: "Privado",
     description:
       "Aplicación web para el diseño y gestion de proyectos de bases de datos, integrando un sistema de control de versiones y inteligencia artificial.",
-    imagesSrc: "images/Petmania",
+    imagesSrc: "images/MirrorProject",
     technologies: [9,10,11,1, 2],
   },
   {
@@ -36,7 +36,7 @@ export const Projects: ProjectsInterface[] = [
     repository: "https://github.com/LeonardoDRebollo/ALUVIPAC",
     description:
       "Pagina web para la empresa Aluvipac ubicada en la ciudad de Cancun.",
-    imagesSrc: "images/RadioXmal",
+    imagesSrc: "images/Aluvipac",
     technologies: [9,10,11,1, 2 ],
   },
   {
@@ -44,9 +44,9 @@ export const Projects: ProjectsInterface[] = [
     icon: <WebRoundedIcon />,
      name: "HRC Intern Management",
      date: "2024 - 2024",
-     repository: "https://github.com/LeonardoRebollo/Mirror-Project",
+     repository: "Privado",
      description: "Plataforma web para la empresa Hard Rock Hotel Cancun, enfocado a la parte del frontend esta plataforma pretende ser una herramienta de gestión de practicantes.",
-    imagesSrc: "images/petmania",
+    imagesSrc: "images/HardRock",
     technologies: [9,10,11,1, 2],
   },
   {
@@ -56,8 +56,8 @@ export const Projects: ProjectsInterface[] = [
      date: "2024 - 2024",
      repository: "https://github.com/LeonardoDRebollo/BanKingApp",
      description: "Aplicación de banco movil realizada en Flutter como parte de un proyecto escolar.",
-    imagesSrc: "images/petmania",
-    technologies: [12],
+    imagesSrc: "images/Banking",
+    technologies: [13],
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ export const Projects: ProjectsInterface[] = [
     date: "2023 - 2023",
     repository: "https://github.com/Albertofuentes00/Newsnet-sipsetv",
     description: "Plataforma web para la empresa SIPSE TVCUN, desarrollo fullstack de una api en C#, base de datos mysql y un frontend en React.js, esta plataforma pretende ser una herramienta para la gestion de noticias.",
-    imagesSrc: "images/petmania",
+    imagesSrc: "images/SIPSE",	
     technologies: [1, 2, 4, 5, 7, 9 ],
   },
   {
@@ -76,7 +76,7 @@ export const Projects: ProjectsInterface[] = [
     date: "2023 - 2023",
     repository: "Privado",
     description: "Plataforma web para la universidad Politecnica de Quintana Roo, esta plataforma pretende ser una herramienta para la gestion de las memorias de los proximos egresados y la publicacion de ellas.",
-    imagesSrc: "images/petmania",
+    imagesSrc: "images/Acervo",
     technologies: [12],
   },
   {
@@ -86,7 +86,7 @@ export const Projects: ProjectsInterface[] = [
     date: "2022 - 2022",
     repository: "https://github.com/LeonardoDRebollo/PFmyschool",
     description: "Plataforma web para la busqueda de instituciones educativas, desarrollo fullstack MVC en .NET, esta plataforma pretende ser una herramienta para la busqueda de instituciones educativas en el estado de Quintana Roo.",
-    imagesSrc: "images/petmania",
+    imagesSrc: "images/MythSchool",
     technologies: [1, 2, 4, 7],
   },
   {
@@ -96,7 +96,7 @@ export const Projects: ProjectsInterface[] = [
      date: "2022 - 2022",
      repository: "Privado",
      description: "Aplicación windows para la gestion de programas de radio, proyecto escolar en C#.",
-    imagesSrc: "images/petmania",
+    imagesSrc: "images/RadioXmal",
     technologies: [4,7],
   },
   {
