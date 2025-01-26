@@ -22,13 +22,14 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
   const { id } = use(params);
   const [data, setData] = useState<ProjectResponse>();
   const [loading, setLoading] = useState(true);
-  
+  const [width, setWidth] = useState(0);
   const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
     setStars(
       createStars(
-        300,
+        width > 720 ? 300 : 100,
         document.documentElement.scrollHeight,
         document.documentElement.scrollWidth
       )
