@@ -1,5 +1,5 @@
 import React from "react";
-import { AccessIcon, CSharpIcon, CSSIcon, FlutterIcon, HtmlIcon, JavaIcon, JavaScriptIcon, MysqlIcon, NodeIcon, ReactIcon, TypescriptIcon, ViteIcon, WordPressIcon } from "../../../public/svg-logos/svg-icons";
+import { AccessIcon, CSharpIcon, CSSIcon,FlutterIcon, HtmlIcon, JavaIcon, JavaScriptIcon, MysqlIcon, NodeIcon, Prisma, ReactIcon, ReduxIcon, TypescriptIcon, ViteIcon, WordPressIcon } from "../../../public/svg-logos/svg-icons";
 
 export interface TecnologiesInterface {
     id: number,
@@ -60,7 +60,7 @@ export const TecnologiesList: TecnologiesInterface[] = [
     },
     {
         id: 11,
-        name: "ViteIcon",
+        name: "Vite",
         icon: <ViteIcon height={50} width={50}/>,
     },
     {
@@ -72,7 +72,17 @@ export const TecnologiesList: TecnologiesInterface[] = [
         id: 13,
         name: "Flutter",
         icon: <FlutterIcon height={50} width={50}/>,
+    },
+    {
+        id: 14,
+        name: "Redux",
+        icon: <ReduxIcon height={50} width={50} />,
     }
+    ,{
+        id: 15,
+        name: "Prisma",
+        icon: <Prisma height={50} width={50} style={{ fill: "#0c344b" }}/>,
+    },
 
 ];
 

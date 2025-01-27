@@ -26,7 +26,7 @@ export const Projects: ProjectsInterface[] = [
     description:
       "Aplicación web para el diseño y gestion de proyectos de bases de datos, integrando un sistema de control de versiones y inteligencia artificial.",
     imagesSrc: "images/MirrorProject",
-    technologies: [9,10,11,1, 2],
+    technologies: [9,10,11,1, 2, 14],
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const Projects: ProjectsInterface[] = [
     description:
       "Pagina web para la empresa Aluvipac ubicada en la ciudad de Cancun.",
     imagesSrc: "images/Aluvipac",
-    technologies: [9,10,11,1, 2 ],
+    technologies: [9,10,11,1, 2, 15 ],
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ export const Projects: ProjectsInterface[] = [
      repository: "Privado",
      description: "Plataforma web para la empresa Hard Rock Hotel Cancun, enfocado a la parte del frontend esta plataforma pretende ser una herramienta de gestión de practicantes.",
     imagesSrc: "images/HardRock",
-    technologies: [9,10,11,1, 2],
+    technologies: [9,10,11,1, 2, 14],
   },
   {
     id: 4,
