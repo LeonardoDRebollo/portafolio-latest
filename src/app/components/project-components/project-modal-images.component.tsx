@@ -58,7 +58,7 @@ export default function ProjectModalImages({
             {imageArray.map((img, index) => (
               <div
                 key={index}
-                className={`carousel-slide ${
+                className={`carousel-slide_xl ${
                   index === currentIndex ? "active" : ""
                 }`}
               >

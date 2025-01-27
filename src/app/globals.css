@@ -88,6 +88,15 @@ body {
   object-position: center;
 }
 
+.carousel-slide_xl {
+  flex: 0 0 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #3030307a;
+  object-position: center;
+}
+
 .carousel-slide img {
   width: 100%;
   max-height: 400px;
@@ -119,6 +128,10 @@ body {
 }
 
 .carousel-slide.active {
+  display: flex;
+}
+
+.carousel-slide_xl.active {
   display: flex;
 }
 
