@@ -82,7 +82,8 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: #3030307a;
+  max-height: 220px;
+  background-color: #30303000;
   object-position: center;
 }
 
@@ -97,6 +98,14 @@ body {
 }
 
 @media screen and (max-width: 720px) {
+  .carousel-slide {
+    flex: 0 0 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #3030307a;
+    object-position: center;
+  }
   .carousel-slide img {
     max-height: 270px;
     min-height: 270px;
@@ -164,7 +173,7 @@ body {
 }
 
 .indicator:hover {
-  background-color: gray;
+  background-color: rgb(100, 100, 100);
   transition: 0.5s;
 }
 
