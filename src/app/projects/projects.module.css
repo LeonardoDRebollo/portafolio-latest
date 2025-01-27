@@ -76,6 +76,8 @@
     background-color: #00000070;
     box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.4);
     min-height: 65vh;
+    backdrop-filter: blur( 2px );
+-webkit-backdrop-filter: blur( 2px );
 }
 
 .description_project{
@@ -170,8 +172,42 @@
     overflow: hidden;
 }
 
+.close_button_container{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.close_button{
+    position: absolute;
+    top: 0;
+    margin-top: 1%;
+    border-radius: 50%;
+    background-color: #5050501c;
+    border-style: none;
+    padding: 15px 20px;
+    display: flex;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 9999999;
+}
+
+.close_button:hover {
+    transition: 0.5s;
+    background-color: #6e6e6e70;
+}
+
 .carouel_button{
-    background-color: #00000027;
+    background-color: #00000011;
     border-style: none;
     padding: 10px;
     display: flex;
@@ -186,7 +222,6 @@
 
 .carouel_button:hover {
     transition: 0.5s;
-    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 1);
     background-color: #00000070;
 }
 
@@ -275,6 +310,7 @@
         z-index: 1;
         position: relative;
         border-radius: 30px;
+
         background-color: #00000070;
         box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.4);
         min-height: 65vh;
@@ -376,17 +412,7 @@
     }
     
     .carouel_button{
-        background-color: #00000027;
-        border-style: none;
-        padding: 10px;
-        display: flex;
-        color: #ffffff;
-        justify-content: center;
-        align-items: center;
-        font-size: .9rem;
-        cursor: pointer;
-        overflow: hidden;
-        transition: 0.5s;
+        display: none;
     }
     
     .carouel_button:hover {

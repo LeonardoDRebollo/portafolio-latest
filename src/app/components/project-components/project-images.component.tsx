@@ -26,6 +26,10 @@ export default function ProjectImages({ data }: ProjectImagesProps) {
     setImage(data);
   }
 
+  const CloseModal = () => {
+    setOpen(false);
+  }
+
   return (
     <div className="carousel-container">
       <div className="carousel">
@@ -59,7 +63,7 @@ export default function ProjectImages({ data }: ProjectImagesProps) {
           ></button>
         ))}
       </div>
-      <ProjectModalImages imageArray={data} open={open} onClose={() => setOpen(false)}/>
+      <ProjectModalImages imageArray={data} open={open} onClose={CloseModal}/>
     </div>
   );
 }

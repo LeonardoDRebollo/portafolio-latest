@@ -2,6 +2,7 @@ import { Dialog, DialogContent, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import styles from "../../projects/projects.module.css";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 interface ProjectModalImagesProps {
   open: boolean;
@@ -45,7 +46,15 @@ export default function ProjectModalImages({
         }}
       >
         <div>
+          <div className={styles.close_button_container}>
+          <button
+            onClick={onClose}
+            className={styles.close_button}
+          > <CloseRoundedIcon /> </button>
+          </div>
+        
           <div className={styles.carousel_container}>
+         
             {imageArray.map((img, index) => (
               <div
                 key={index}
@@ -53,6 +62,8 @@ export default function ProjectModalImages({
                   index === currentIndex ? "active" : ""
                 }`}
               >
+                
+              
                 <img
                   key={index}
                   src={img}
