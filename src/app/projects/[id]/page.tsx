@@ -38,7 +38,7 @@ export default function ProjectPage({params}: {params:Promise<{ id: string}>}) {
 
   const getProject = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/projects-api?id=${id}`, {
+      const response = await fetch(`http://portafolio-latest.vercel.app/api/projects-api?id=${id}`, {
         method: "GET",
       });
      

@@ -80,10 +80,11 @@ body {
 .carousel-slide {
   flex: 0 0 100%;
   display: none;
+  max-height: 390px;
+  min-height: 390px;
   justify-content: center;
   align-items: center;
-  max-height: 220px;
-  background-color: #30303000;
+  background-color: #3030307a;
   object-position: center;
 }
 
@@ -101,6 +102,8 @@ body {
   .carousel-slide {
     flex: 0 0 100%;
     display: none;
+    max-height: 260px;
+    min-height: 260px;
     justify-content: center;
     align-items: center;
     background-color: #3030307a;
@@ -173,7 +176,7 @@ body {
 }
 
 .indicator:hover {
-  background-color: rgb(100, 100, 100);
+  background-color: gray;
   transition: 0.5s;
 }
 
