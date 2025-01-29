@@ -19,7 +19,7 @@ export default function ContactMe() {
             },
             "K44vvhF-KcR2gayIp"
         )
-        .then((_response) => {
+        .then(() => {
           alert("Correo enviado con éxito.");       
           setEmail("");
           setMessage("");
