@@ -17,6 +17,7 @@ export interface Star {
 export default function Home() {
   const [stars, setStars] = useState<Star[]>([]);
   const ref = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     
@@ -49,7 +50,7 @@ export default function Home() {
       ))}
       <div className={styles.container} >
       
-        <WelcomeContainer onClick={() => ButtonClick()}/>
+        <WelcomeContainer onClick={() => ButtonClick()} onClickContact={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })}/>
         
 
         <section className={styles.userprofile} ref={ref}>
@@ -57,7 +58,10 @@ export default function Home() {
           <TimeLine />
         
         </section>
+        <section ref={contactRef}>
         <ContactMe />
+        </section>
+        
         <BlackWave/>
       </div>
     </div>

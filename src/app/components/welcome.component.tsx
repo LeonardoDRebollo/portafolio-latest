@@ -4,8 +4,9 @@ import { Cow, Meteor, Planet, UfoBeam } from "../../../public/svg-logos/svg-icon
 
 interface welcomeProps {
     onClick: () => void
+    onClickContact: () => void
 }
-export function WelcomeContainer ({onClick}: welcomeProps) {
+export function WelcomeContainer ({onClick, onClickContact}: welcomeProps) {
     return (
         <section className={styles.welcome}>
                       <UfoBeam className={styles.ufo} />
@@ -23,7 +24,7 @@ export function WelcomeContainer ({onClick}: welcomeProps) {
             <Planet className={styles.planet} />
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "5%"}}> 
             <Button type="button" onClick={onClick} label="Ver Proyectos" className={styles.button} />
-            <Button type="button" onClick={onClick} label="Contactame" className={styles.button} />
+            <Button type="button" onClick={onClickContact} label="Contactame" className={styles.button} />
             </div>
            
           </div>
