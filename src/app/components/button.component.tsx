@@ -4,9 +4,10 @@ interface ButtonProps {
     type?: "button" | "submit" | "reset" | undefined;
     className?: string;
     disabled?: boolean;
+    label?: string
 }
 
-export default function Button({  onClick, type, className, disabled }: ButtonProps) {
+export default function Button({  onClick, type, className, disabled, label }: ButtonProps) {
     return (
         <button
             onClick={onClick}
@@ -14,7 +15,7 @@ export default function Button({  onClick, type, className, disabled }: ButtonPr
             className={className}
             disabled={disabled}
         >
-          Ver más
+          {label}
         </button>
     );
 }

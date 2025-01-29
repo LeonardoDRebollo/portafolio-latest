@@ -14,6 +14,7 @@ export interface ProjectsInterface {
   technologies: number[];
   projectTecnologies?: TecnologiesInterface[];
   images?: string[];
+  features: string[];
 }
 
 export const Projects: ProjectsInterface[] = [
@@ -27,6 +28,7 @@ export const Projects: ProjectsInterface[] = [
       "Aplicación web para el diseño y gestion de proyectos de bases de datos, integrando un sistema de control de versiones y inteligencia artificial.",
     imagesSrc: "images/MirrorProject",
     technologies: [9,10,11,1, 2, 14],
+    features: ["Gestion de proyectos de bases de datos", "Control de versiones", "Inteligencia artificial", "Diseño de bases de datos", "Exportacion de bases de datos"],
   },
   {
     id: 2,
@@ -38,6 +40,7 @@ export const Projects: ProjectsInterface[] = [
       "Pagina web para la empresa Aluvipac ubicada en la ciudad de Cancun.",
     imagesSrc: "images/Aluvipac",
     technologies: [9,10,11,1, 2, 15 ],
+    features: ["Envio de correos electronicos", "Formulario de contacto", "Prisma db para la base de datos",],
   },
   {
     id: 3,
@@ -48,6 +51,7 @@ export const Projects: ProjectsInterface[] = [
      description: "Plataforma web para la empresa Hard Rock Hotel Cancun, enfocado a la parte del frontend esta plataforma pretende ser una herramienta de gestión de practicantes.",
     imagesSrc: "images/HardRock",
     technologies: [9,10,11,1, 2, 14],
+    features: ["Gestion de practicantes", "Control de versiones", "Web sockets", "Generacion de documentos PDF", "Visualizacion de datos", "Visualizacion de graficos"],
   },
   {
     id: 4,
@@ -58,6 +62,7 @@ export const Projects: ProjectsInterface[] = [
      description: "Aplicación de banco movil realizada en Flutter como parte de un proyecto escolar.",
     imagesSrc: "images/Banking",
     technologies: [13],
+    features: ["Aplicación de banco movil", "Integración de APIs", "Control de versiones", "Envio de notificaciones"],
   },
   {
     id: 5,
@@ -68,6 +73,7 @@ export const Projects: ProjectsInterface[] = [
     description: "Plataforma web para la empresa SIPSE TVCUN, desarrollo fullstack de una api en C#, base de datos mysql y un frontend en React.js, esta plataforma pretende ser una herramienta para la gestion de noticias.",
     imagesSrc: "images/SIPSE",	
     technologies: [1, 2, 4, 5, 7, 9 ],
+    features: ["Tablas interactivas", "Generacion de documentos en PDF", "Automatización de tareas", "Control de versiones"],
   },
   {
     id: 6,
@@ -78,6 +84,7 @@ export const Projects: ProjectsInterface[] = [
     description: "Plataforma web para la universidad Politecnica de Quintana Roo, esta plataforma pretende ser una herramienta para la gestion de las memorias de los proximos egresados y la publicacion de ellas.",
     imagesSrc: "images/Acervo",
     technologies: [12],
+    features: ["Gestion de memorias de estudiantes", "Envio de correos electronicos", "Integración de plugins", "Control de versiones", "Visualización de PDFs"],
   },
   {
     id: 7,
@@ -88,6 +95,7 @@ export const Projects: ProjectsInterface[] = [
     description: "Plataforma web para la busqueda de instituciones educativas, desarrollo fullstack MVC en .NET, esta plataforma pretende ser una herramienta para la busqueda de instituciones educativas en el estado de Quintana Roo.",
     imagesSrc: "images/MythSchool",
     technologies: [1, 2, 4, 7],
+    features: ["Busqueda de instituciones", "Control de versiones", "Formulario de contacto", "API en .NET", "Desarrollo MVC", "Diseño responsive"],
   },
   {
     id: 8,
@@ -98,6 +106,7 @@ export const Projects: ProjectsInterface[] = [
      description: "Aplicación windows para la gestion de programas de radio, proyecto escolar en C#.",
     imagesSrc: "images/RadioXmal",
     technologies: [4,7],
+    features: ["Gestion de Radio difusoras", "XML", "Aplicación de escritorio"],
   },
   {
     id: 9,
@@ -108,6 +117,7 @@ export const Projects: ProjectsInterface[] = [
      description: "Aplicación windows para la gestion de mascotas, proyecto escolar en Java.",
     imagesSrc: "images/Petmania",
     technologies: [3,6],
+    features: ["Gestion de mascotas", "Control de versiones", "Desarrollo en Java", "Aplicación de escritorio"],
   }
 
 ];

@@ -7,7 +7,7 @@ import ProfileLine from "./components/profie-line.component";
 import { WelcomeContainer } from "./components/welcome.component";
 import { BlackWave } from "./components/blackwave.component";
 import { createStars } from "./functions/create-stars.function";
-
+import ContactMe from "./components/contact-me.component";
 export interface Star {
   
   top: number;
@@ -31,6 +31,7 @@ export default function Home() {
 
   return (
     <div id="stars" className={styles.main}>
+  
       {stars.map((star, index) => (
         <figure
           key={index}
@@ -47,13 +48,16 @@ export default function Home() {
         />
       ))}
       <div className={styles.container} >
+      
         <WelcomeContainer onClick={() => ButtonClick()}/>
         
 
         <section className={styles.userprofile} ref={ref}>
           <ProfileLine />
           <TimeLine />
+        
         </section>
+        <ContactMe />
         <BlackWave/>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { Dialog, DialogContent, useMediaQuery, useTheme } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../projects/projects.module.css";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -8,16 +8,22 @@ interface ProjectModalImagesProps {
   open: boolean;
   onClose: () => void;
   imageArray: string[];
+  index: number;
 }
 
 export default function ProjectModalImages({
   open,
   onClose,
+  index,
   imageArray,
 }: ProjectModalImagesProps) {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(index);
+
+  useEffect(() => {
+    setCurrentIndex(index);
+  }, [index]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % imageArray.length);
@@ -28,6 +34,9 @@ export default function ProjectModalImages({
       prevIndex === 0 ? imageArray.length - 1 : prevIndex - 1
     );
   };
+
+
+
   return (
     <Dialog
       fullScreen={fullScreen}

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import ProjectModalImages from "./project-modal-images.component";
-
+import styles from "../../projects/projects.module.css";
 export interface ProjectImagesProps {
   data: string[];
 }
@@ -13,6 +13,7 @@ export default function ProjectImages({ data }: ProjectImagesProps) {
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+    
   };
 
   const prevSlide = () => {
@@ -22,15 +23,20 @@ export default function ProjectImages({ data }: ProjectImagesProps) {
   };
 
   const ImageClick = ({ data }: { data: string}) => {
-    setOpen(true);
+
     setImage(data);
+    setOpen(true);
   }
 
   const CloseModal = () => {
     setOpen(false);
   }
 
+
   return (
+    <div className={styles.images_container}>
+
+
     <div className="carousel-container">
       <div className="carousel">
         <button className="carousel-btn prev" onClick={prevSlide}>
@@ -52,18 +58,23 @@ export default function ProjectImages({ data }: ProjectImagesProps) {
         <ArrowBackIosNewRoundedIcon sx={{transform: "rotate(180deg)"}}/>
         </button>
       </div>
-      <div className="carousel-indicators">
-        {data.map((_, index) => (
-          <button
-            key={index}
-            className={`indicator ${
-              index === currentIndex ? "active" : ""
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          ></button>
-        ))}
-      </div>
-      <ProjectModalImages imageArray={data} open={open} onClose={CloseModal}/>
+    
+    </div>
+    <div className={styles.thumbnails_container}>
+      {data.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          className={index === currentIndex ? styles.thumbnail_active : ""}
+          alt={`Thumbnail ${index}`}
+          draggable="false"
+          onClick={() => setCurrentIndex(index)}
+        />
+      ))}
+      
+
+    </div>
+    <ProjectModalImages imageArray={data} open={open} onClose={CloseModal} index={ currentIndex}/>
     </div>
   );
 }

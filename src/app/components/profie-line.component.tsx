@@ -70,7 +70,7 @@ export default function ProfileLine() {
                     ))
                 }
             </section>
-            <h2>Contacto</h2>
+            <h2>Otras formas de contacto</h2>
             <section className={styles.contact}>
                 <a href="https://www.facebook.com/profile.php?id=100005401807158" target="_blank">
                     <Facebook className={styles.SocialIcon}/>

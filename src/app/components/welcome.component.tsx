@@ -8,20 +8,26 @@ interface welcomeProps {
 export function WelcomeContainer ({onClick}: welcomeProps) {
     return (
         <section className={styles.welcome}>
-          <div className={styles.welcome_title}>
-            <UfoBeam className={styles.ufo} />
+                      <UfoBeam className={styles.ufo} />
             <Cow className={styles.cow} />
             <Meteor className={styles.meteor} />
-            <div style={{ zIndex: "999", position: "relative" }}>
+          <div className={styles.welcome_title}>
+
+            <div className={styles.welcome_text}>
             <h2>
-            Bienvenido a mi portafolio, donde podrás encontrar información sobre mí, los proyectos en los que he trabajado, los que estoy desarrollando actualmente y mi formación académica.
+            BIENVENIDO A MI PAGINA DE PORTAFOLIO, AQUI ENCONTRARAS ALGUNOS DE LOS PROYECTOS QUE HE REALIZADO.
             </h2>
             </div>
            
             <br></br>
             <Planet className={styles.planet} />
+            <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "5%"}}> 
+            <Button type="button" onClick={onClick} label="Ver Proyectos" className={styles.button} />
+            <Button type="button" onClick={onClick} label="Contactame" className={styles.button} />
+            </div>
+           
           </div>
-          <div className={styles.triangle_shape}>
+          {/* <div className={styles.triangle_shape}>
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
@@ -33,8 +39,8 @@ export function WelcomeContainer ({onClick}: welcomeProps) {
                 className={styles.triangle_fill}
               ></path>
             </svg>
-          </div>
-          <div className={styles.welcome_shape}>
+          </div> */}
+          {/* <div className={styles.welcome_shape}>
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +54,9 @@ export function WelcomeContainer ({onClick}: welcomeProps) {
                 className={styles.wave_fill}
               ></path>
             </svg>
-          </div>
+          </div>  */}
 
-          <Button type="button" onClick={onClick} className={styles.button} />
+          
         </section>
     )
 }
